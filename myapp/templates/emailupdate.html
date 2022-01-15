@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p></p><p></p><p></p>
+    <h4>Correct your mail here!</h4>
+    <form  method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-primary" type="submit" value="Edit">
+    </form>
+{% endblock %}

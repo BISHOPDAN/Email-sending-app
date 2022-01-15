@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <center>
+    <form method="post">
+        {% csrf_token %}
+        <h3>Bulk Mails....</h3>
+        <label for="Subject">Subject : </label> 
+        <input type="text" name = 'subject'><p></p>
+        <label for="Message">Message : </label>
+        <textarea name="message" class="comments"></textarea>
+    </center>
+
+        <div><p></p>
+            <h5>The Following E-mails Will Recieve The Message...</h5>
+            {% for mail in emails %}
+            <ul>
+                <li>{{myapp.email}}</li>   
+            </ul>
+            {% endfor %}
+        </div>
+        <input class="btn btn-primary" type="submit" value="Send">
+        <p class="spacing"></p>
+    </form>
+    
+{% endblock %}

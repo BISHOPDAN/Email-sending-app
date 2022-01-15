@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="containertop">
+    <center>
+        <p>Type in your email in the box below</p><p></p>
+    <form method = 'POST'>
+        {% csrf_token %}
+            {{form.as_p}}
+        <input class=" btn btn-primary" type="submit" value="Add Mail">
+    </form>
+</center>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="containertop">
+       <center><h3>Lists of Available Emails </h3></center> 
+    {% for mail in emails %}
+    
+    
+        <ul>
+            <li>{{myapp.email}}
+             <h6><a class="btn btn-primary" href="{% url 'myapp:update' mail.pk %}">Edit</a>
+                <a class="btn btn-danger" href="{% url 'myapp:delete' mail.pk %}">Delete</a>
+             </h6>
+            </li>
+        </ul>
+         
+         
+   
+
+    {% endfor %}
+</div>
+{% endblock %}
